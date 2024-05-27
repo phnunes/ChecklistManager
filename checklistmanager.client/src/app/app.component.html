@@ -1,0 +1,83 @@
+<div class="container-fluid">
+  <h1 id="tableLabel">Checklists</h1>
+  <p *ngIf="!checklists"><em>Carregando... Por favor, atualize a página!</em></p>
+
+  <table *ngIf="checklists" class="table">
+    <thead>
+      <tr>
+        <th>Número do Checklist</th>
+        <th>Carro</th>
+        <th>#</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let check of checklists">
+        <td>{{ check.checklistID }}</td>
+        <td>{{ check.vehicle.name }}</td>
+        <td><div class="btn btn-primary">Editar</div></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Button trigger modal -->
+  <div class="mt-3">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      Novo
+    </button>
+
+  </div>
+ 
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Novo Checklist</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <select class="form-select" aria-label="Selecione o veículo">
+                <option *ngFor="let vehicle of vehicles" value="{{vehicle.vehicleID}}">{{vehicle.vehicleID}} - {{vehicle.name}}</option>
+              </select>
+            </div>
+
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="checkTires">
+              <label class="form-check-label" for="checkTires">Pneus</label>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="checkLights">
+              <label class="form-check-label" for="checkLights">Lights</label>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="checkElectric">
+              <label class="form-check-label" for="checkElectric">Electric</label>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="checkBreaks">
+              <label class="form-check-label" for="checkBreaks">Breaks</label>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="checkEngine">
+              <label class="form-check-label" for="checkEngine">Engine</label>
+            </div>
+            <div class="form-floating">
+              <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"  style="height: 100px"></textarea>
+                <label for="floatingTextarea">Observações</label>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="submit" class="btn btn-primary" >Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+@ChecklistManager.Server_HostAddress = http://localhost:5155
+
+GET {{ChecklistManager.Server_HostAddress}}/checklist/
+Accept: application/json
+
+###
