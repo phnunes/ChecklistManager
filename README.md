@@ -15,3 +15,4 @@ Visão da API com os endpoints de ET e cadastros de Checklists e Veículos:
 Visão do Front com a listagem dos checklists cadastrados no banco:
 ![image](https://github.com/phnunes/ChecklistManager/assets/8655600/a3f4860d-b546-49ef-abde-7f4287ea72bd)
 
+![image](https://github.com/phnunes/ChecklistManager/assets/8655600/d22a6d69-1ea7-43b7-b285-e9e36058b897)
